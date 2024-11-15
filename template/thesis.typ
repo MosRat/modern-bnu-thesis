@@ -119,9 +119,9 @@
 //   / DMRG: 密度矩阵重正化群密度矩阵重正化群密度矩阵重正化群 (Density-Matrix Reformation-Group)
 // ]
 
-#include "../chapters/ch1.typ"
+#include "./chapters/ch1.typ"
 
-#include "../chapters/ch2.typ"
+#include "./chapters/ch2.typ"
 
 
 
