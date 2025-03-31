@@ -1,4 +1,5 @@
 #import "../lib.typ": documentclass, indent
+// #import "@local/modern-bnu-thesis:0.0.1": documentclass, indent
 
 // 你首先应该安装 https://github.com/nju-lug/modern-nju-thesis/tree/main/fonts/FangZheng 里的所有字体，
 // 如果是 Web App 上编辑，你应该手动上传这些字体文件，否则不能正常使用「楷体」和「仿宋」，导致显示错误。
@@ -9,7 +10,7 @@
   doc,
   preface,
   mainmatter,
-  mainmatter-end,
+  // mainmatter-end,
   appendix,
   // 页面函数
   fonts-display-page,
@@ -255,7 +256,7 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 // 致谢
 #acknowledgement[
-  感谢 NJU-LUG，感谢 NJUThesis LaTeX 模板。
+  感谢 NJU-LUG 的 modern-nju-thesis，感谢 Thesis Template of Beijing Normal University in LaTeX 模板。
 ]
 
 // 手动分页
@@ -280,4 +281,4 @@ $ F_n = floor(1 / sqrt(5) phi.alt^n) $
 
 // 正文结束标志，不可缺少
 // 这里放在附录后面，使得页码能正确计数
-#mainmatter-end()
+// #mainmatter-end()

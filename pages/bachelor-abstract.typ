@@ -1,6 +1,5 @@
 #import "../utils/custom-cuti.typ": fakebold
 #import "../utils/style.typ": 字号, 字体
-#import "../utils/indent.typ": fake-par
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/invisible-heading.typ": invisible-heading
 
@@ -23,12 +22,15 @@
   // 1.  默认参数
   fonts = 字体 + fonts
   info = (
-    title: ("基于 Typst 的", "北京师范大学大学学位论文"),
-    author: "张三",
-    department: "某学院",
-    major: "某专业",
-    supervisor: ("李四", "教授"),
-  ) + info
+    (
+      title: ("基于 Typst 的", "北京师范大学大学学位论文"),
+      author: "张三",
+      department: "某学院",
+      major: "某专业",
+      supervisor: ("李四", "教授"),
+    )
+      + info
+  )
 
   // 2.  对参数进行处理
   // 2.1 如果是字符串，则使用换行符将标题分隔为列表
@@ -45,8 +47,7 @@
 
   // 4.  正式渲染
   pagebreak(weak: true)
-  
-  
+
 
   [
     #set text(font: fonts.宋体, size: 字号.小四)
@@ -57,32 +58,37 @@
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(font:字体.黑体,size: 字号.三号)
+      #set text(font: 字体.黑体, size: 字号.三号)
 
       #v(1em)
 
-      #fakebold((("",)+ info.title).sum())
+      #fakebold((("",) + info.title).sum())
     ]
 
     #v(15pt)
 
     #align(center)[
-      #set text(font:字体.黑体,size: 字号.小三)
-      #fakebold[摘要]
+      #set text(font: 字体.黑体, size: 字号.小三)
+      #fakebold[摘　　要]
     ]
 
-    #body
+    #[
+      #set par(first-line-indent: (amount: 2em, all: true))
+      #body
+    ]
+
+
 
 
     #v(1em)
 
-    #h(2em)#fakebold(text(font: 字体.等宽, size: 字号.小四,"关键词："))#(("",)+ keywords.intersperse("；")).sum()
+    #h(2em)#fakebold(text(font: 字体.等宽, size: 字号.小四, "关键词："))#(("",) + keywords.intersperse("；")).sum()
   ]
 
   if twoside {
     pagebreak()
-    counter(page).update(n => {(n - 1)})
-    set page(numbering: none,)
+    counter(page).update(n => { (n - 1) })
+    set page(numbering: none)
     ""
   }
 }

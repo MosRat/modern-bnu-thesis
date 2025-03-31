@@ -1,9 +1,4 @@
-// 南京大学学位论文模板 modern-nju-thesis
-// Author: https://github.com/OrangeX4
-// Repo: https://github.com/nju-lug/modern-nju-thesis
-// 在线模板可能不会更新得很及时，如果需要最新版本，请关注 Repo
-
-#import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
+// #import "@preview/anti-matter:0.0.2": anti-inner-end as mainmatter-end
 #import "layouts/doc.typ": doc
 #import "layouts/preface.typ": preface
 #import "layouts/mainmatter.typ": mainmatter
@@ -27,9 +22,10 @@
 #import "utils/bilingual-bibliography.typ": bilingual-bibliography
 #import "utils/custom-numbering.typ": custom-numbering
 #import "utils/custom-heading.typ": heading-display, active-heading, current-heading
-#import "utils/indent.typ": indent, fake-par
 #import "@preview/i-figured:0.2.4": show-figure, show-equation
 #import "utils/style.typ": 字体, 字号
+
+#let indent = h(2em)
 
 // 使用函数闭包特性，通过 `documentclass` 函数类进行全局信息配置，然后暴露出拥有了全局配置的、具体的 `layouts` 和 `templates` 内部函数。
 #let documentclass(
@@ -45,7 +41,7 @@
   // 默认参数
   fonts = 字体 + fonts
   info = (
-    title: ("基于 Typst 的", "南京大学学位论文"),
+    title: ("基于 Typst 的", "北京师范大学学位论文"),
     title-en: "NJU Thesis Template for Typst",
     grade: "20XX",
     student-id: "1234567890",
@@ -71,7 +67,7 @@
     clc: "O643.12",
     udc: "544.4",
     secret-level: "公开",
-    supervisor-contact: "南京大学 江苏省南京市栖霞区仙林大道163号",
+    supervisor-contact: "北京师范大学 北京市海淀区新街口外大街19号",
     email: "xyz@smail.nju.edu.cn",
     school-code: "10284",
     degree: auto,
@@ -101,9 +97,9 @@
         mainmatter(twoside: twoside, ..args, fonts: fonts + args.named().at("fonts", default: (:)))
       }
     },
-    mainmatter-end: (..args) => {
-      mainmatter-end(..args)
-    },
+    // mainmatter-end: (..args) => {
+    //   mainmatter-end(..args)
+    // },
     appendix: (..args) => {
       appendix(..args)
     },
