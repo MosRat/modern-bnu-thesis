@@ -30,7 +30,7 @@
   // 1.  默认参数
   fonts = 字体 + fonts
   if title-text-args == auto {
-    title-text-args = (font: fonts.黑体, size: 字号.三号, weight: "extrabold")
+    title-text-args = (font: fonts.宋体, size: 字号.三号, weight: "bold")
   }
   // 引用页数的字体，这里用于显示 Times New Roman
   if reference-font == auto {

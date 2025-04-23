@@ -1,4 +1,3 @@
-#import "../utils/custom-cuti.typ": fakebold
 #import "../utils/style.typ": 字号, 字体
 #import "../utils/double-underline.typ": double-underline
 #import "../utils/invisible-heading.typ": invisible-heading

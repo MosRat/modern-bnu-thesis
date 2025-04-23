@@ -58,18 +58,18 @@
     #invisible-heading(level: 1, outlined: outlined, outline-title)
 
     #align(center)[
-      #set text(font: 字体.黑体, size: 字号.三号)
+      #set text(font: 字体.宋体, size: 字号.三号)
 
       #v(1em)
 
-      #fakebold((("",) + info.title).sum())
+      #text((("",) + info.title).sum(),weight: "extrabold")
     ]
 
     #v(15pt)
 
     #align(center)[
-      #set text(font: 字体.黑体, size: 字号.小三)
-      #fakebold[摘　　要]
+      #set text(font: 字体.宋体, size: 字号.小三)
+      #text(weight:"bold")[摘　　要]
     ]
 
     #[
@@ -82,7 +82,7 @@
 
     #v(1em)
 
-    #h(2em)#fakebold(text(font: 字体.等宽, size: 字号.小四, "关键词："))#(("",) + keywords.intersperse("；")).sum()
+    #h(2em)#text(font: 字体.等宽, size: 字号.小四, "关键词：",weight: "bold")#(("",) + keywords.intersperse("；")).sum()
   ]
 
   if twoside {

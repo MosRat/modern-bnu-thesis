@@ -1,5 +1,5 @@
 #import "../utils/style.typ": 字号, 字体
-#import "@preview/cuti:0.2.1": *
+#import "@preview/cuti:0.3.0": *
 
 #let indent = h(2em)
 
@@ -11,7 +11,7 @@
   info: (:),
 ) = {
   // 0.伪粗体，页面
-  show: show-cn-fakebold
+  // show: show-cn-fakebold
   set page(margin: (left: 2.5cm, top: 2.5cm, right: 2.0cm, bottom: 2.0cm))
   set par(spacing: 0pt)
 

@@ -1,6 +1,6 @@
 #import "../utils/datetime-display.typ": datetime-display
 #import "../utils/style.typ": 字号, 字体
-#import "@preview/cuti:0.2.1": *
+#import "@preview/cuti:0.3.0": *
 
 // 本科生封面
 #let bachelor-cover(
@@ -24,7 +24,7 @@
   datetime-display: datetime-display,
 ) = {
   // 0.伪粗体
-  show: show-cn-fakebold
+  // show: show-cn-fakebold
    
   // 1.  默认参数
   fonts = 字体 + fonts
@@ -53,21 +53,20 @@
    
   // 3.  内置辅助函数
   let info-key(body) = {
-    rect(width: 100%, inset: info-inset, stroke: none, fakebold(
-      weight: "extrabold",
-      (text(font: fonts.at(info-key-font, default: "宋体"), weight: "extrabold", size: 字号.四号, body + [：])),
-    ))
+    rect(width: 100%, inset: info-inset, stroke: none, 
+      (text(font: fonts.at(info-key-font, default: "宋体"), weight: "bold", size: 字号.四号, body + [：])),
+    )
   }
    
   let info-value(key, body) = {
     set align(left)
-    rect(width: 100%, inset: info-inset, stroke: none, fakebold(weight: "extrabold", text(
+    rect(width: 100%, inset: info-inset, stroke: none, text(
       font: fonts.at(info-value-font, default: "宋体"),
       size: 字号.四号,
-      weight: "extrabold",
+      weight: "bold",
       bottom-edge: "descender",
       body,
-    )))
+    ))
   }
    
   let info-value-number(key, body) = {
@@ -131,7 +130,7 @@
   }
    
   // 将中文之间的空格间隙从 0.25 em 调整到 0.5 em
-  block(text(size: 字号.小初, font: 字体.宋体, spacing: 0.25em, weight: "extrabold", fakebold()[ 本 科 生 毕 业 论 文（设 计） ]))
+  block(text(size: 字号.小初, font: 字体.宋体, spacing: 0.25em,weight: "bold", [ 本 科 生 毕 业 论 文（设 计） ]))
    
   if anonymous {
     v(155pt)
@@ -142,18 +141,16 @@
   align(std.left, block(
     // stroke: black,
     inset: (left: 3em, bottom: 0pt),
-    fakebold(weight: "bold",text(size: 字号.三号, font: 字体.宋体, weight: "bold", "毕业论文（设计）题目：")),
+    text(size: 字号.三号, font: 字体.宋体, weight: "bold", "毕业论文（设计）题目："),
   ))
    
-  rect(width: 15cm, height: 1.2cm, stroke: (bottom: black + 0.05em), inset: (top: 0.65cm), fakebold(
-    weight: "extrabold",
-    text(size: 字号.三号, font: 字体.宋体, weight: "extrabold", bottom-edge: "descender", info.title.at(0)),
-  ))
+  rect(width: 15cm, height: 1.2cm, stroke: (bottom: black + 0.05em), inset: (top: 0.55cm), 
+    text(size: 字号.三号, font: 字体.宋体, weight: "bold", bottom-edge: "descender", info.title.at(0)),
+  )
    
-  rect(width: 15cm, height: 1.2cm, stroke: (bottom: black + 0.05em), inset: (top: 0.65cm), fakebold(
-    weight: "extrabold",
-    text(size: 字号.三号, font: 字体.宋体, weight: "extrabold", bottom-edge: "descender", info.title.at(1)),
-  ))
+  rect(width: 15cm, height: 1.2cm, stroke: (bottom: black + 0.05em), inset: (top: 0.55cm),
+    text(size: 字号.三号, font: 字体.宋体, weight: "bold", bottom-edge: "descender", info.title.at(1)),
+  )
   
   v(1.8cm)
    

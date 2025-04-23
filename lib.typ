@@ -68,7 +68,7 @@
     udc: "544.4",
     secret-level: "公开",
     supervisor-contact: "北京师范大学 北京市海淀区新街口外大街19号",
-    email: "xyz@smail.nju.edu.cn",
+    email: "202xxxxx00xx@mail.bnu.edu.cn",
     school-code: "10284",
     degree: auto,
     degree-en: auto,
